@@ -1,4 +1,5 @@
 from typing import List, Union
+import tweety
 from tweety import Twitter
 import pandas as pd
 import os
@@ -45,21 +46,25 @@ def crawl_tweet(
         #     print(tweet.__dict__)
 
 if __name__ == "__main__":
-    # Read config file
-    CONFIG_PATH = os.path.join(os. getcwd(), "config.yaml")
-    config = read_yaml(path=CONFIG_PATH)
+    try:
+        # Read config file
+        CONFIG_PATH = os.path.join(os. getcwd(), "config.yaml")
+        config = read_yaml(path=CONFIG_PATH)
 
-    # Login Twitter account
-    app = Twitter("session")
-    with open("account.key", "r") as f:
-        username, password, key = f.read().split()
-    app.sign_in(username, password, extra=key)
+        # Login Twitter account
+        app = Twitter("session")
+        with open("account.key", "r") as f:
+            username, password, key = f.read().split()
+        app.sign_in(username, password, extra=key)
 
-    crawl_tweet(
-        app = app,
-        keywords=config['keywords'],
-        min_faves=config['min_faves'],
-        min_retweets=config['min_retweet'],
-        pages=config['pages'],
-        wait_time=config['wait_time']
-    )
+        crawl_tweet(
+            app = app,
+            keywords=config['keywords'],
+            min_faves=config['min_faves'],
+            min_retweets=config['min_retweet'],
+            pages=config['pages'],
+            wait_time=config['wait_time']
+        )
+    except tweety.exceptions_.UnknownError as e:
+
+        pass  # Ignore the error
