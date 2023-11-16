@@ -19,7 +19,7 @@ def read_yaml(path):
 def convert_and_write_to_json(data, json_filename):
     # Open the JSON file in write mode
     data = [i for n, i in enumerate(data) if i not in data[:n]]
-    with open(os.path.join("data", json_filename), 'w', encoding='utf-8') as json_file:
+    with open(os.path.join("data", json_filename), 'w+', encoding='utf-8') as json_file:
         # Write the data to the JSON file
         json_file.write('[')
         for idx, tweet in enumerate(data):
@@ -39,32 +39,31 @@ def crawl_tweet(
 ) -> List[pd.DataFrame]:
     for keyword in keywords:
         print(f"Crawling with keyword '{keyword}'")
-
-        tweets = app.search(f"{keyword} min_faves:{min_faves} min_retweets:{min_retweets}", pages = pages, wait_time = wait_time)
-        convert_and_write_to_json(tweets,f"{keyword}.json")
+        try:
+            tweets = app.search(f"{keyword} min_faves:{min_faves} min_retweets:{min_retweets}", pages = pages, wait_time = wait_time)
+            convert_and_write_to_json(tweets,f"{keyword}.json")
         # for tweet in tweets:
         #     print(tweet.__dict__)
-
+        except tweety.exceptions_.UnknownError as e:
+            print('bug')
+            pass  # Ignore the error
+        print('')
 if __name__ == "__main__":
-    try:
-        # Read config file
-        CONFIG_PATH = os.path.join(os. getcwd(), "config.yaml")
-        config = read_yaml(path=CONFIG_PATH)
+    # Read config file
+    CONFIG_PATH = os.path.join(os. getcwd(), "config.yaml")
+    config = read_yaml(path=CONFIG_PATH)
 
-        # Login Twitter account
-        app = Twitter("session")
-        with open("account.key", "r") as f:
-            username, password, key = f.read().split()
-        app.sign_in(username, password, extra=key)
+    # Login Twitter account
+    app = Twitter("session")
+    with open("account.key", "r") as f:
+        username, password, key = f.read().split()
+    app.sign_in(username, password, extra=key)
 
-        crawl_tweet(
-            app = app,
-            keywords=config['keywords'],
-            min_faves=config['min_faves'],
-            min_retweets=config['min_retweet'],
-            pages=config['pages'],
-            wait_time=config['wait_time']
-        )
-    except tweety.exceptions_.UnknownError as e:
-
-        pass  # Ignore the error
+    crawl_tweet(
+        app = app,
+        keywords=config['keywords'],
+        min_faves=config['min_faves'],
+        min_retweets=config['min_retweet'],
+        pages=config['pages'],
+        wait_time=config['wait_time']
+    )
