@@ -1,0 +1,79 @@
+{
+    "cookies": "kdt=BFvYCak0CsNPwssKgP2lIn2R4LnaLrDV2DmYiv08;twid=\"u=1724743363734425600\";att=;ct0=23613163fd27d264b52a4e3401a81524;auth_token=a33ebe2333815108cb2282f0872953009dc85627;",
+    "user": {
+        "original_user": {
+            "can_dm": true,
+            "can_media_tag": true,
+            "created_at": "Wed Nov 15 10:57:35 +0000 2023",
+            "default_profile": true,
+            "default_profile_image": true,
+            "description": "",
+            "entities": {
+                "description": {
+                    "urls": []
+                }
+            },
+            "fast_followers_count": 0,
+            "favourites_count": 0,
+            "followers_count": 0,
+            "friends_count": 0,
+            "has_custom_timelines": false,
+            "is_translator": false,
+            "listed_count": 0,
+            "location": "",
+            "media_count": 0,
+            "name": "Anh Le Quang",
+            "needs_phone_verification": false,
+            "normal_followers_count": 0,
+            "pinned_tweet_ids_str": [],
+            "possibly_sensitive": false,
+            "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+            "profile_interstitial_type": "",
+            "screen_name": "Anhlq486720",
+            "statuses_count": 1,
+            "translator_type": "none",
+            "verified": false,
+            "want_retweets": false,
+            "withheld_in_countries": []
+        },
+        "id": 1724743363734425600,
+        "rest_id": 1724743363734425600,
+        "created_at": "2023-11-15 10:57:35+00:00",
+        "date": "2023-11-15 10:57:35+00:00",
+        "entities": {
+            "description": {
+                "urls": []
+            }
+        },
+        "description": null,
+        "bio": null,
+        "fast_followers_count": null,
+        "favourites_count": null,
+        "followers_count": null,
+        "friends_count": null,
+        "has_custom_timelines": null,
+        "is_translator": null,
+        "listed_count": null,
+        "location": null,
+        "media_count": null,
+        "name": "Anh Le Quang",
+        "normal_followers_count": null,
+        "profile_banner_url": null,
+        "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "profile_interstitial_type": null,
+        "protected": null,
+        "screen_name": "Anhlq486720",
+        "username": "Anhlq486720",
+        "statuses_count": 1,
+        "translator_type": "none",
+        "verified": false,
+        "can_dm": true,
+        "following": false,
+        "community_role": null,
+        "notifications_enabled": false,
+        "notifications": false,
+        "possibly_sensitive": null,
+        "pinned_tweets": null,
+        "profile_url": "https://twitter.com/Anhlq486720"
+    }
+}
