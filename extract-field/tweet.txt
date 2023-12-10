@@ -1,0 +1,18 @@
+hashtags
+original_tweet bookmark_count 
+original_tweet created_at 
+original_tweet favorite_count 
+original_tweet full_text 
+original_tweet is_quote_status 
+original_tweet lang 
+original_tweet quote_count 
+original_tweet reply_count 
+original_tweet retweet_count 
+original_tweet user_id_str 
+author original_user screen_name 
+id
+is_retweet
+is_quoted 
+is_reply 
+views 
+url

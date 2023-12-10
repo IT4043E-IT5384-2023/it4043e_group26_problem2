@@ -1,0 +1,22 @@
+author original_user verified_type
+author original_user can_dm
+author original_user can_media_tag
+author original_user created_at   
+author original_user default_profile 
+author original_user description 
+author original_user fast_followers_count 
+author original_user favourites_count 
+author original_user followers_count 
+author original_user friends_count 
+author original_user has_custom_timelines 
+author original_user is_translator 
+author original_user listed_count 
+author original_user location 
+author original_user media_count 
+author original_user screen_name 
+author original_user statuses_count 
+author original_user translator_type 
+author original_user want_retweets 
+author protected 
+author verified 
+author profile_url 
