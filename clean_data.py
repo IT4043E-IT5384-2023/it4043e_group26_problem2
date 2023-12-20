@@ -21,8 +21,8 @@ spark._jsc.hadoopConfiguration().set('fs.gs.auth.service.account.enable', 'true'
 
 ## Connect to the file in Google Bucket with Spark
 
-user_path = f"gs://it4043e-it5384/it4043e/it4043e_group12_problem3/extract/user_data.parquet"
-post_path = f"gs://it4043e-it5384/it4043e/it4043e_group12_problem3/extract/post_data.parquet"
+user_path = f"gs://it4043e-it5384/it4043e/it4043e_group26_problem2/extract/user_data.parquet"
+post_path = f"gs://it4043e-it5384/it4043e/it4043e_group26_problem2/extract/post_data.parquet"
 
 df_user = spark.read.parquet(user_path)
 df_post = spark.read.parquet(post_path)
