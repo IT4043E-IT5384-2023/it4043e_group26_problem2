@@ -7,9 +7,9 @@ similarity = pickle.load(open(r'F:\Mr.Hung\Team12-Problem3\deploy_model\similari
 df = pickle.load(open(r'F:\Mr.Hung\Team12-Problem3\deploy_model\df.pkl','rb'))
 
 def recommendation(screen_name):
-    # idx = df[df['screen_name'] == screen_name].index[0]
+    idx = df[df['screen_name'] == screen_name].index[0]
     # idx là vị trí cột screen_name là 0
-    distances = sorted(list(enumerate(similarity[0])),reverse=True,key=lambda x:x[1])
+    distances = sorted(list(enumerate(similarity[idx])),reverse=True,key=lambda x:x[1])
     # distances = sorted(list(enumerate(similarity[idx])),reverse=True,key=lambda x:x[1])
     
     recommends = []
@@ -31,7 +31,8 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    screen_name = str(request.form.values())
+    input = [str(x) for x in request.form.values()]
+    screen_name = input[0]
 
 
     prediction = recommendation(screen_name)
